@@ -5,6 +5,7 @@ import image1 from "../../../../public/nextjs.png"
 import image2 from "../../../../public/setup.png"
 import image3 from "../../../../public/hook.png"
 import Link from 'next/link';
+import CommentsSection from '@/components/CommentSection';
 
 const BlogDetailPage = () => {
     // Get dynamic id from the URL
@@ -61,6 +62,7 @@ Together, useState and useEffect allow you to add state and handle side effects 
             <Link href={'/blog'}  className="px-5 py-2.5 rounded-full text-white text-sm tracking-wider font-medium border border-current outline-none bg-blue-700 hover:bg-blue-800 active:bg-blue-700">Back to Blog</Link>
           </button>
         </div>
+        <CommentsSection postid=''/>
       </div>
     );
   };

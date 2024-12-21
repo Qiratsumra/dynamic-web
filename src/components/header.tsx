@@ -25,7 +25,7 @@ const LinksData:Data[] =[
 export default function Header() {
   
   return (
-    <header className="flex border-b py-3 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50">
+    <header className="flex border-b border-slate-500 m-2 py-3 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50">
     <div className='flex justify-between items-center w-full'>
       
       {/* Logo Section */}
