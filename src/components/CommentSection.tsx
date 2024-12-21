@@ -1,5 +1,5 @@
-import { comment } from "postcss";
-import { use, useState } from "react";
+
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "@/components/ui/card"
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -50,6 +50,11 @@ export default function CommentsSection({postid}:CommentProps){
         }
     };
 
+    const handleDeleteComment = (commentID: string) => {
+        const updatedComments = comments.filter((comment) => comment.id !== commentID);
+        setComments(updatedComments);
+      };
+
     return(
         <div  className="mt-8">
             <h2 className="text-2xl font-bold">Comments</h2>
@@ -60,7 +65,7 @@ export default function CommentsSection({postid}:CommentProps){
                             <div className="font-semibold">{commment.user}</div>
                             <p>{commment.comment}</p>
                             <Button onClick={()=>handleEditedComment(commment.id)} className="mt-2 text-white bg-black">Edit</Button>
-
+                            <Button onClick={() => handleDeleteComment(commment.id)} className="text-white bg-red-600" >Delete </Button>
                         </CardContent>
                     </Card>
                 ))
