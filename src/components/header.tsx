@@ -1,3 +1,5 @@
+'use client'
+
 import { FacebookIcon, Github, Instagram, LinkedinIcon, Menu } from "lucide-react";
 import Image from "next/image"
 import Link from "next/link"
@@ -31,16 +33,15 @@ export default function Header() {
       {/* Logo Section */}
       <div className="flex items-center">
         <Link href="/">
-          <Image src={profile} alt="logo" className='rounded-full w-16 sm:w-20 ring-2 ring-orange-500' />
+         <h1 className="text-4xl hover:text-slate-600">QS</h1>
         </Link>
-        <h1 className="ml-4 text-lg sm:text-2xl font-bold hover:text-orange-400 text-orange-700">Qirat Saeed</h1>
       </div>
       
       {/* Desktop Navigation Links */}
       <div className='hidden md:flex justify-between items-center'>
-        <ul className="flex gap-8 lg:gap-16 font-serif font-bold">
+        <ul className="flex gap-8 lg:gap-16 font-serif ">
           {LinksData.map((list) => (
-            <li key={list.path} className="text-orange-700 hover:text-orange-600 hover:cursor-pointer">
+            <li key={list.path} className="hover:cursor-pointer hover:text-slate-500">
               <Link href={`${list.path}`}>{list.name}</Link>
             </li>
           ))}
@@ -49,10 +50,11 @@ export default function Header() {
       
       {/* Social Icons */}
       <div className="hidden md:flex gap-4 lg:gap-8 items-center">
-        <Github className="text-orange-700 hover:text-orange-600 hover:cursor-pointer" />
-        <LinkedinIcon className="text-orange-700 hover:text-orange-600 hover:cursor-pointer" />
-        <Instagram className="text-orange-700 hover:text-orange-600 hover:cursor-pointer" />
+        <Github className=" hover:cursor-pointer" />
+        <LinkedinIcon className=" hover:cursor-pointer" />
+        <Instagram className=" hover:cursor-pointer" />
       </div>
+      <div className="flex justify-evenly">
       <ModeToggle/>
       {/* Mobile Menu Button */}
       <Sheet>
@@ -63,10 +65,10 @@ export default function Header() {
         {/* Mobile Menu Content */}
         <SheetContent>
           <SheetHeader>
-            <SheetTitle className="mt-5 text-xl sm:text-2xl font-bold font-serif text-orange-700 hover:text-orange-600">Menu Bar</SheetTitle>
+            <SheetTitle className="mt-5 text-xl sm:text-2xl font-bold font-serif">Menu Bar</SheetTitle>
             <ul className="mt-5">
               {LinksData.map((list) => (
-                <li key={list.path} className="mt-4 text-lg sm:text-xl font-bold font-serif text-orange-700 hover:text-orange-600 hover:cursor-pointer">
+                <li key={list.path} className="mt-4 text-lg sm:text-xl font-bold font-serif hover:cursor-pointer">
                   <Link href={`${list.path}`}>{list.name}</Link>
                 </li>
               ))}
@@ -74,6 +76,7 @@ export default function Header() {
           </SheetHeader>
         </SheetContent>
       </Sheet>
+      </div>
     </div>
   </header>
   
